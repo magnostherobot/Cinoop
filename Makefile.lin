@@ -1,4 +1,3 @@
-CC		:=	gcc
 SDIR	:=	source
 IDIR	:=	-Iinclude
 CFLAGS	:=	$(IDIR) -Wall -fms-extensions -Ofast -DLIN

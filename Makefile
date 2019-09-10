@@ -5,58 +5,58 @@ all: windows ds gamecube 3ds linux psp PS4
 
 .PHONY: windows
 windows:
-	make -f Makefile.win
+	$(MAKE) -f Makefile.win
 
 .PHONY: ds
 ds:
-	make -f Makefile.ds
+	$(MAKE) -f Makefile.ds
 
 .PHONY: gamecube
 gamecube:
-	make -f Makefile.gc
+	$(MAKE) -f Makefile.gc
 
 .PHONY: 3ds
 3ds:
-	make -f Makefile.3d
+	$(MAKE) -f Makefile.3d
 
 .PHONY: linux
 linux:
-	make -f Makefile.lin
+	$(MAKE) -f Makefile.lin
 
 .PHONY: osx
 osx:
-	make -f Makefile.osx
+	$(MAKE) -f Makefile.osx
 
 .PHONY: psp
 psp:
-	make -f Makefile.psp
+	$(MAKE) -f Makefile.psp
 
 PS4:
-	make -f Makefile.ps4
+	$(MAKE) -f Makefile.ps4
 
 clean:
-	rm -f wbuild/*
-	rm -f dbuild/*
-	rm -f gbuild/*
-	rm -f 3build/*
-	rm -f lbuild/*
-	rm -f xbuild/*
-	rm -f cinoop.elf
-	rm -f cinoopstripped.elf
-	rm -f cinoop.nds
-	rm -f cinoop.dol
-	rm -f cinoop.3ds
-	rm -f cinoop.3dsx
-	rm -f cinoop.cia
-	rm -f cinoop.smdh
-	rm -f cinoop.exe
-	rm -f cinoop
-	rm -f PARAM.SFO
-	rm -f EBOOT.PBP
-	rm -f cinoop.bin
-	rmdir wbuild
-	rmdir dbuild
-	rmdir gbuild
-	rmdir 3build
-	rmdir lbuild
-	rmdir xbuild
+	$(RM) wbuild/*
+	$(RM) dbuild/*
+	$(RM) gbuild/*
+	$(RM) 3build/*
+	$(RM) lbuild/*
+	$(RM) xbuild/*
+	$(RM) cinoop.elf
+	$(RM) cinoopstripped.elf
+	$(RM) cinoop.nds
+	$(RM) cinoop.dol
+	$(RM) cinoop.3ds
+	$(RM) cinoop.3dsx
+	$(RM) cinoop.cia
+	$(RM) cinoop.smdh
+	$(RM) cinoop.exe
+	$(RM) cinoop
+	$(RM) PARAM.SFO
+	$(RM) EBOOT.PBP
+	$(RM) cinoop.bin
+	$(RM) -r wbuild
+	$(RM) -r dbuild
+	$(RM) -r gbuild
+	$(RM) -r 3build
+	$(RM) -r lbuild
+	$(RM) -r xbuild

@@ -6,7 +6,7 @@ include $(DEVKITARM)/ds_rules
 
 TARGET	:=	cinoop
 BUILD	:=	dbuild
-SOURCES	:=	source source/ds  
+SOURCES	:=	source source/ds
 INCLUDES:=	include
 
 CFLAGS	:=	-Wall -fms-extensions -Ofast -fomit-frame-pointer -ffast-math
@@ -19,9 +19,9 @@ LIBS	:= -lfat -lnds9 -lm
 LIBDIRS	:=	$(LIBNDS)
 
 ifneq ($(BUILD),$(notdir $(CURDIR)))
- 
+
 export OUTPUT	:=	$(CURDIR)/$(TARGET)
- 
+
 export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir))
 export DEPSDIR	:=	$(CURDIR)/$(BUILD)
 
@@ -38,21 +38,21 @@ endif
 
 export OFILES	:=	$(BINFILES:.bin=.o) \
 					$(CPPFILES:.cpp=.o) $(CFILES:.c=.o) $(SFILES:.s=.o)
- 
+
 export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 					$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
 					-I$(CURDIR)/$(BUILD)
- 
+
 export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib)
 
 .PHONY: $(BUILD)
 
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
-	@make --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile.ds
+	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile.ds
 
 else
- 
+
 DEPENDS	:=	$(OFILES:.o=.d)
 
 $(OUTPUT).nds	: 	$(OUTPUT).elf
