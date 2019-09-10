@@ -3,8 +3,10 @@ gbuild/
 wbuild/
 3build/
 ps4build/
+lbuild/
 source/*.o
 source/psp/*.o
+cinoop
 cinoop.elf
 cinoopstripped.elf
 cinoop.nds
